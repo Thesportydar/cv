@@ -175,7 +175,10 @@ async function generatePdfForLang(lang: Lang) {
   const htmlPath = path.join(__dirname, `cv-temp-${lang}.html`);
   fs.writeFileSync(htmlPath, html, "utf8");
 
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    executablePath: process.env.CHROME_PATH || undefined,
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
   const page = await browser.newPage();
   await page.goto("file://" + htmlPath, { waitUntil: "networkidle0" });
   await page.pdf({

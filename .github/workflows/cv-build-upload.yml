@@ -28,10 +28,15 @@ jobs:
         with:
           node-version: 20
 
+      - uses: browser-actions/setup-chrome@v1
+
       - name: Install dependencies
         run: |
           corepack enable
           pnpm install --frozen-lockfile
+
+      - name: Set CHROME_PATH
+        run: echo "CHROME_PATH=$(which chrome || which chromium || echo /opt/hostedtoolcache/setup-chrome/chromium/*/x64/chrome)" >> $GITHUB_ENV
 
       - name: Build PDFs
         run: pnpm tsx index.ts
