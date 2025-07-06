@@ -43,8 +43,8 @@ jobs:
 
       - name: Test PDF generation
         run: |
-          test -f cv-inaqui-paladino-es.pdf
-          test -f cv-inaqui-paladino-en.pdf
+          test -f inaqui-paladino-cv-es.pdf
+          test -f inaqui-paladino-cv-en.pdf
 
       - name: Install AWS CLI
         run: |
