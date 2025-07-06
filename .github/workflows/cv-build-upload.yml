@@ -1,0 +1,62 @@
+name: Build and Upload CV PDFs
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '**'
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+
+    env:
+      AWS_S3_ENDPOINT: ${{ secrets.AWS_S3_ENDPOINT }}
+      MINIO_ACCESS_KEY_ID: ${{ secrets.MINIO_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+      AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+      # Optional: set for self-signed MinIO
+      AWS_EC2_METADATA_DISABLED: true
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: |
+          corepack enable
+          pnpm install --frozen-lockfile
+
+      - name: Build PDFs
+        run: pnpm tsx index.ts
+
+      - name: Test PDF generation
+        run: |
+          test -f cv-inaqui-paladino-es.pdf
+          test -f cv-inaqui-paladino-en.pdf
+
+      - name: Install AWS CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y awscli
+
+      - name: Configure AWS CLI
+        run: |
+          aws configure set aws_access_key_id "${MINIO_ACCESS_KEY_ID}"
+          aws configure set aws_secret_access_key "${AWS_SECRET_ACCESS_KEY}"
+          aws configure set default.region "${AWS_DEFAULT_REGION:-us-east-1}"
+          aws configure set default.s3.signature_version s3v4
+
+      - name: Upload Spanish CV PDF
+        run: |
+          aws --endpoint-url "$AWS_S3_ENDPOINT" s3 cp cv-inaqui-paladino-es.pdf "s3://${AWS_S3_BUCKET}/inaqui-paladino-cv-es.pdf" --acl public-read
+
+      - name: Upload English CV PDF
+        run: |
+          aws --endpoint-url "$AWS_S3_ENDPOINT" s3 cp cv-inaqui-paladino-en.pdf "s3://${AWS_S3_BUCKET}/inaqui-paladino-cv-en.pdf" --acl public-read
