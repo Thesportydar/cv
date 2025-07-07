@@ -9,6 +9,7 @@ on:
 jobs:
   build-and-upload:
     runs-on: ubuntu-latest
+    environment: env
 
     env:
       AWS_S3_ENDPOINT: ${{ secrets.AWS_S3_ENDPOINT }}
@@ -28,15 +29,10 @@ jobs:
         with:
           node-version: 20
 
-      - uses: browser-actions/setup-chrome@v1
-
       - name: Install dependencies
         run: |
           corepack enable
           pnpm install --frozen-lockfile
-
-      - name: Set CHROME_PATH
-        run: echo "CHROME_PATH=$(which chrome || which chromium || echo /opt/hostedtoolcache/setup-chrome/chromium/*/x64/chrome)" >> $GITHUB_ENV
 
       - name: Build PDFs
         run: pnpm tsx index.ts
@@ -55,8 +51,16 @@ jobs:
 
       - name: Upload Spanish CV PDF
         run: |
-          aws --endpoint-url "$AWS_S3_ENDPOINT" s3 cp cv-inaqui-paladino-es.pdf "s3://${AWS_S3_BUCKET}/inaqui-paladino-cv-es.pdf" --acl public-read
+          ENDPOINT_OPT=""
+          if [[ -n "$AWS_S3_ENDPOINT" ]]; then
+            ENDPOINT_OPT="--endpoint-url $AWS_S3_ENDPOINT"
+          fi
+          aws $ENDPOINT_OPT s3 cp inaqui-paladino-cv-es.pdf "s3://${AWS_S3_BUCKET}/inaqui-paladino-cv-es.pdf" --acl public-read
 
       - name: Upload English CV PDF
         run: |
-          aws --endpoint-url "$AWS_S3_ENDPOINT" s3 cp cv-inaqui-paladino-en.pdf "s3://${AWS_S3_BUCKET}/inaqui-paladino-cv-en.pdf" --acl public-read
+          ENDPOINT_OPT=""
+          if [[ -n "$AWS_S3_ENDPOINT" ]]; then
+            ENDPOINT_OPT="--endpoint-url $AWS_S3_ENDPOINT"
+          fi
+          aws $ENDPOINT_OPT s3 cp inaqui-paladino-cv-en.pdf "s3://${AWS_S3_BUCKET}/inaqui-paladino-cv-en.pdf" --acl public-read

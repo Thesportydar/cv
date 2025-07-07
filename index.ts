@@ -176,7 +176,7 @@ async function generatePdfForLang(lang: Lang) {
   fs.writeFileSync(htmlPath, html, "utf8");
 
   const browser = await puppeteer.launch({
-    executablePath: process.env.CHROME_PATH || undefined,
+    executablePath: '/usr/bin/google-chrome-stable',
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
   const page = await browser.newPage();
