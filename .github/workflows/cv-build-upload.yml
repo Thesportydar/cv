@@ -49,6 +49,10 @@ jobs:
           aws configure set default.region "${AWS_DEFAULT_REGION:-us-east-1}"
           aws configure set default.s3.signature_version s3v4
 
+      - name: Debug endpoint
+        run: |
+          echo "Using endpoint: $AWS_S3_ENDPOINT"
+
       - name: Upload Spanish CV PDF
         run: |
           ENDPOINT_OPT=""
