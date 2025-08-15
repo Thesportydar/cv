@@ -36,7 +36,6 @@ interface CVData {
   }[];
   personal: {
     email: string;
-    telefono: string;
     linkedin: string;
     github: string;
     portfolio: string;
@@ -108,7 +107,6 @@ function harvardCvHtml(data: CVData, lang: Lang): string {
   <div class="role">${data.role}</div>
   <div class="contact-block">
     <span><strong>${lang === "es" ? "Email" : "Email"}:</strong> ${data.personal.email}</span>
-    <span><strong>${lang === "es" ? "Teléfono" : "Phone"}:</strong> ${data.personal.telefono}</span>
     <span><strong>LinkedIn:</strong> <a href="${data.personal.linkedin}">${data.personal.linkedin.replace(/^https?:\/\//, "")}</a></span>
     <span><strong>Portfolio:</strong> <a href="${data.personal.portfolio}/${lang}">${data.personal.portfolio.replace(/^https?:\/\//, "")}</a></span>
     <br>
