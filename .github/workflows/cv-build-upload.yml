@@ -55,7 +55,7 @@ jobs:
           if [[ -n "$AWS_S3_ENDPOINT" ]]; then
             ENDPOINT_OPT="--endpoint-url $AWS_S3_ENDPOINT"
           fi
-          aws $ENDPOINT_OPT s3 cp inaqui-paladino-cv-es.pdf "s3://${AWS_S3_BUCKET}/inaqui-paladino-cv-es.pdf" --acl public-read
+          aws $ENDPOINT_OPT s3 cp inaqui-paladino-cv-es.pdf "s3://${AWS_S3_BUCKET}/inaqui-paladino-cv-es.pdf"
 
       - name: Upload English CV PDF
         run: |
@@ -63,4 +63,4 @@ jobs:
           if [[ -n "$AWS_S3_ENDPOINT" ]]; then
             ENDPOINT_OPT="--endpoint-url $AWS_S3_ENDPOINT"
           fi
-          aws $ENDPOINT_OPT s3 cp inaqui-paladino-cv-en.pdf "s3://${AWS_S3_BUCKET}/inaqui-paladino-cv-en.pdf" --acl public-read
+          aws $ENDPOINT_OPT s3 cp inaqui-paladino-cv-en.pdf "s3://${AWS_S3_BUCKET}/inaqui-paladino-cv-en.pdf"
