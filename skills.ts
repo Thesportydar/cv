@@ -1,38 +1,34 @@
 export const skillsT = {
   es: {
+    devops: [
+      "AWS", "Terraform", "Docker & Docker Compose",
+      "CI/CD (GitHub Actions/GitLab)", "Linux Administration", "Bash Scripting", "N8N"
+    ],
     backend: [
-      "Java", "Spring", "Python", "Node.js", "Express", "Bun", "Redis", "PostgreSQL"
+      "Python", "PostgreSQL", "Redis", "Node.js / Bun", "SQL & NoSQL", "Java"
     ],
     frontend: [
-      "TypeScript", "JavaScript", "Astro"
-    ],
-    devops: [
-      "Docker", "Linux", "Git", "Bash"
-    ],
-    collaboration: [
-      "Jira", "Trello"
+      "TypeScript", "Astro", "JavaScript"
     ],
     soft: [
-      "Comunicación efectiva", "Resolución de problemas", "Trabajo en equipo", "Adaptabilidad"
+      "Resolución de problemas", "Autodidacta", "Comunicación técnica", "Adaptabilidad"
     ],
-    cta: "Para ver proyectos y más información, visitá mi portfolio online:"
+    cta: "Para ver proyectos de infraestructura y código, visitá mi portfolio:"
   },
   en: {
+    devops: [
+      "AWS", "Terraform", "Docker & Docker Compose",
+      "CI/CD (GitHub Actions/GitLab)", "Linux Administration", "Bash Scripting", "N8N"
+    ],
     backend: [
-      "Java", "Spring", "Python", "Node.js", "Express", "Bun", "Redis", "PostgreSQL"
+      "Python", "PostgreSQL", "Redis", "Node.js / Bun", "SQL & NoSQL", "Java"
     ],
     frontend: [
-      "TypeScript", "JavaScript", "Astro"
-    ],
-    devops: [
-      "Docker", "Linux", "Git", "Bash"
-    ],
-    collaboration: [
-      "Jira", "Trello"
+      "TypeScript", "Astro", "JavaScript"
     ],
     soft: [
-      "Effective communication", "Problem solving", "Teamwork", "Adaptability"
+      "Problem solving", "Self-taught", "Technical communication", "Adaptability"
     ],
-    cta: "For more projects and up-to-date information, visit my online portfolio:"
+    cta: "For infrastructure projects and source code, visit my online portfolio:"
   }
 };

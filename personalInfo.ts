@@ -7,7 +7,7 @@ export const personalInfoT = {
     portfolio: "https://inaquipaladino.com",
     ciudad: "Tandil, Buenos Aires, Argentina",
     edad: 23,
-    profile: "Ingeniero de Sistemas, actualmente trabajando en procesamiento de datos, automatización y desarrollo backend orientado a la toma de decisiones. Cuento con trayectoria en equipos ágiles (Scrum, SAFe), destacándome por mi capacidad de adaptación, aprendizaje continuo y resolución de problemas. Apasionado por optimizar procesos, automatizar flujos de trabajo y explorar nuevas herramientas a través de proyectos propios y colaborativos."
+    profile: "Ingeniero de Sistemas especializado en backend, automatización y operaciones en entornos productivos. Experiencia en el diseño y despliegue de arquitecturas orientadas a datos, gestión de infraestructura y contenedores. Comprometido con la confiabilidad, la escalabilidad y el desarrollo de soluciones para la toma de decisiones."
   },
   en: {
     name: "Iñaqui Paladino Bravo",
@@ -17,6 +17,6 @@ export const personalInfoT = {
     portfolio: "https://inaquipaladino.com",
     ciudad: "Tandil, Buenos Aires, Argentina",
     edad: 23,
-    profile: "Systems Engineer, currently working in data processing, automation, and backend development focused on decision-making. I have experience in agile teams (Scrum, SAFe), and I'm recognized for my adaptability, continuous learning, and problem-solving skills. I'm passionate about optimizing processes, automating workflows, and exploring new tools through personal and collaborative projects."
+    profile: "Systems Engineer focused on backend development, automation, and production operations. Experienced in designing and deploying data-driven architectures, managing infrastructure, and containerization. Committed to reliability, scalability, and building solutions for decision-making support."
   }
 };
