@@ -40,8 +40,6 @@ interface CVData {
     github: string;
     portfolio: string;
     ciudad: string;
-    fechaNacimiento: string;
-    dni: string;
     edad: number;
   };
   backend: string[];
@@ -285,7 +283,7 @@ async function generatePdfForLang(lang: Lang) {
 
   const browser = await puppeteer.launch({
     executablePath: '/usr/bin/google-chrome-stable',
-    // executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    //executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
   const page = await browser.newPage();
