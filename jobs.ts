@@ -36,7 +36,7 @@ export const jobsT = {
     ],
     "en": [
         {
-            title: "Data & Backend Developer",
+            title: "Data & Backend Engineer",
             company: "ISISTAN - CONICET-UNICEN",
             location: "Tandil, Buenos Aires",
             isRemote: false,
