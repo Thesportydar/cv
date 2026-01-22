@@ -131,7 +131,11 @@ function harvardCvHtml(data: CVData, lang: Lang, profileImageBase64: string): st
     
     .entry { margin-bottom: 16px; }
     
-    .entry-head { display: flex; justify-content: space-between; align-items: baseline; }
+    .entry-head { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: flex-start; /* Changed from baseline to handle wrapping better */
+    }
     
     /* Semantic Job Title */
     h3 {
@@ -139,9 +143,18 @@ function harvardCvHtml(data: CVData, lang: Lang, profileImageBase64: string): st
         font-weight: bold;
         margin: 0;
         color: #000;
+        /* Allow title to wrap if needed, taking available space */
+        flex: 1; 
+        padding-right: 15px; /* Add some space between title and date */
     }
     
-    .entry-date { font-weight: bold; font-size: 1em; } /* Visual match for the date/duration */
+    .entry-date { 
+        font-weight: bold; 
+        font-size: 1em; 
+        white-space: nowrap; /* Prevent date from wrapping */
+        flex-shrink: 0; /* Ensure date doesn't shrink */
+        text-align: right;
+    } /* Visual match for the date/duration */
 
     .entry-sub { font-style: italic; color: #333; font-size: 0.95em; margin-bottom: 4px; margin-top: 2px;}
     .entry-desc { font-size: 0.95em; text-align: justify; }
@@ -234,7 +247,9 @@ function harvardCvHtml(data: CVData, lang: Lang, profileImageBase64: string): st
             <span class="entry-date">${ed.duration}</span>
         </div>
         <div class="entry-desc">
-            ${Array.isArray(ed.description) ? ed.description.join(" ") : ed.description}
+            ${Array.isArray(ed.description)
+      ? `<ul style="margin: 0; padding-left: 20px;">${ed.description.map(d => `<li>${d}</li>`).join("")}</ul>`
+      : ed.description}
         </div>
       </div>
     `).join("")}
