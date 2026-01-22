@@ -1,24 +1,17 @@
 name: Build and Upload CV PDFs
 
 on:
-  workflow_dispatch:
   push:
-    paths:
-      - '**'
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   build-and-upload:
     runs-on: ubuntu-latest
-    environment: env
-
-    env:
-      AWS_S3_ENDPOINT: ${{ secrets.AWS_S3_ENDPOINT }}
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-      AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
-      # Optional: set for self-signed MinIO
-      AWS_EC2_METADATA_DISABLED: true
 
     steps:
       - name: Checkout repo
@@ -42,25 +35,17 @@ jobs:
           test -f inaqui-paladino-cv-es.pdf
           test -f inaqui-paladino-cv-en.pdf
 
-      - name: Configure AWS CLI
-        run: |
-          aws configure set aws_access_key_id "${AWS_ACCESS_KEY_ID}"
-          aws configure set aws_secret_access_key "${AWS_SECRET_ACCESS_KEY}"
-          aws configure set default.region "${AWS_DEFAULT_REGION:-us-east-1}"
-          aws configure set default.s3.signature_version s3v4
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: "${{ secrets.AWS_ROLE_ARN }}"
+          aws-region: "${{ secrets.AWS_REGION }}"
 
       - name: Upload Spanish CV PDF
-        run: |
-          ENDPOINT_OPT=""
-          if [[ -n "$AWS_S3_ENDPOINT" ]]; then
-            ENDPOINT_OPT="--endpoint-url $AWS_S3_ENDPOINT"
-          fi
-          aws $ENDPOINT_OPT s3 cp inaqui-paladino-cv-es.pdf "s3://${AWS_S3_BUCKET}/public/inaqui-paladino-cv-es.pdf"
+        run: aws s3 cp inaqui-paladino-cv-es.pdf "s3://${{ secrets.AWS_S3_BUCKET }}/public/inaqui-paladino-cv-es.pdf"
 
       - name: Upload English CV PDF
-        run: |
-          ENDPOINT_OPT=""
-          if [[ -n "$AWS_S3_ENDPOINT" ]]; then
-            ENDPOINT_OPT="--endpoint-url $AWS_S3_ENDPOINT"
-          fi
-          aws $ENDPOINT_OPT s3 cp inaqui-paladino-cv-en.pdf "s3://${AWS_S3_BUCKET}/public/inaqui-paladino-cv-en.pdf"
+        run: aws s3 cp inaqui-paladino-cv-en.pdf "s3://${{ secrets.AWS_S3_BUCKET }}/public/inaqui-paladino-cv-en.pdf"
+
+      - name: Create CloudFront invalidation 
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/public/inaqui-paladino-cv-*"
