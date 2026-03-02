@@ -1,0 +1,51 @@
+name: Build and Upload CV PDFs
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: |
+          corepack enable
+          pnpm install --frozen-lockfile
+
+      - name: Build PDFs
+        run: pnpm tsx index.ts
+
+      - name: Test PDF generation
+        run: |
+          test -f inaqui-paladino-cv-es.pdf
+          test -f inaqui-paladino-cv-en.pdf
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: "${{ secrets.AWS_ROLE_ARN }}"
+          aws-region: "${{ secrets.AWS_REGION }}"
+
+      - name: Upload Spanish CV PDF
+        run: aws s3 cp inaqui-paladino-cv-es.pdf "s3://${{ secrets.AWS_S3_BUCKET }}/public/inaqui-paladino-cv-es.pdf"
+
+      - name: Upload English CV PDF
+        run: aws s3 cp inaqui-paladino-cv-en.pdf "s3://${{ secrets.AWS_S3_BUCKET }}/public/inaqui-paladino-cv-en.pdf"
+
+      - name: Create CloudFront invalidation 
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/public/inaqui-paladino-cv-*"
