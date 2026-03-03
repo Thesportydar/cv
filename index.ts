@@ -266,14 +266,13 @@ function harvardCvHtml(data: CVData, lang: Lang, profileImageBase64: string): st
 async function generatePdfForLang(lang: Lang) {
   const data = extractCVData(lang);
 
-  // Read and convert profile image to base64
-  const profilePath = path.join(__dirname, "profile.png");
+  const profilePath = path.join(__dirname, "profile_small.png");
   let profileBase64 = "";
   try {
     const imageBuffer = fs.readFileSync(profilePath);
     profileBase64 = imageBuffer.toString('base64');
   } catch (err) {
-    console.error("Warning: Could not read profile.png", err);
+    console.error("Warning: Could not read profile_small.png", err);
   }
 
   const html = harvardCvHtml(data, lang, profileBase64);

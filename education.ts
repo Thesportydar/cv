@@ -10,6 +10,15 @@ export const educationT = {
             technologies: []
         },
         {
+            title: "AWS Solutions Architect Associate (SAA-C03)",
+            company: "Amazon Web Services (AWS)",
+            location: "",
+            isRemote: true,
+            duration: "2026",
+            description: ["Preparación completa — examen pendiente"],
+            technologies: []
+        },
+        {
             title: "Fundamentos de Ingeniería de Software",
             company: "Instituto Tecnológico Superior de Teziutlán",
             location: "Puebla, México",
@@ -27,6 +36,15 @@ export const educationT = {
             isRemote: false,
             duration: "Mar. 2020 - May. 2025",
             description: ["Intermediate degree: University Programmer Analyst", "Distinction: Graduated with academic honors", "Overall average: 8.75"],
+            technologies: []
+        },
+        {
+            title: "AWS Solutions Architect Associate (SAA-C03)",
+            company: "Amazon Web Services (AWS)",
+            location: "",
+            isRemote: true,
+            duration: "2026",
+            description: ["Preparation completed — exam pending"],
             technologies: []
         },
         {
