@@ -17,7 +17,7 @@ export const jobsT = {
         },
         {
             title: "Backend & Data Engineer",
-            company: "Instituto Superior de Ingeniería de Software de Tandil",
+            company: "ISISTAN",
             location: "Tandil, Buenos Aires",
             isRemote: false,
             duration: "Abr. 2025 - Act.",
@@ -34,7 +34,7 @@ export const jobsT = {
         },
         {
             title: "Fullstack Developer",
-            company: "Instituto Superior de Ingeniería de Software de Tandil",
+            company: "ISISTAN",
             location: "Tandil, Buenos Aires",
             isRemote: true,
             duration: "Ago. 2024 - Feb. 2025",
@@ -67,7 +67,7 @@ export const jobsT = {
         },
         {
             title: "Data & Backend Engineer",
-            company: "Instituto Superior de Ingeniería de Software de Tandil",
+            company: "ISISTAN",
             location: "Tandil, Buenos Aires",
             isRemote: false,
             duration: "Apr. 2025 - Act.",
@@ -84,7 +84,7 @@ export const jobsT = {
         },
         {
             title: "Fullstack Developer",
-            company: "Instituto Superior de Ingeniería de Software de Tandil",
+            company: "ISISTAN",
             location: "Tandil, Buenos Aires",
             isRemote: true,
             duration: "Aug. 2024 - Feb. 2025",
