@@ -1,7 +1,7 @@
 export const skillsT = {
     es: {
         backend: [
-            "Python", "PostgreSQL", "MySQL", "Apache Solr", "DynamoDB", "Redis", "Node.js / Bun", "Java"
+            "Python", "PostgreSQL", "MySQL", "Apache Solr", "MongoDB", "Redis", "Node.js / Bun", "Java"
         ],
         devops: [
             "AWS (Lambda, ECS, S3, SQS, DynamoDB, VPC, IAM, CloudWatch, Route53, CloudFront, EventBridge)",

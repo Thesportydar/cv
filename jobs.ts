@@ -31,7 +31,7 @@ export const jobsT = {
                 "Implementación de soluciones de Inteligencia Artificial aplicada (análisis semántico, búsqueda y ranking), validando enfoques técnicos mediante Pruebas de Concepto (PoCs).",
                 "Participación en instancias de definición con áreas de gerencia, traduciendo necesidades funcionales en soluciones técnicas."
             ],
-            technologies: ["Python", "Apache Solr", "Docker", "Docker Compose", "MySQL", "PostgreSQL", "Bash", "Git", "Gitlab", "Astro", "JavaScript"]
+            technologies: ["Python", "Apache Solr", "Docker", "Docker Compose", "MySQL", "PostgreSQL", "Bash", "Git", "Gitlab", "Astro", "Node.js", "Flask"]
         },
         {
             title: "Fullstack Developer",
@@ -45,7 +45,7 @@ export const jobsT = {
                 "Implementación de funcionalidades backend en Python con SQLite y Redis para trabajo colaborativo, seguimiento del progreso académico y gestión de datos.",
                 "Desarrollo de algoritmos de IA aplicada para análisis automático de datos educativos, incluyendo procesamiento semántico con Sentence Transformers.",
                 "Despliegue y validación de la plataforma con docentes y estudiantes en contextos reales de aula (experiencia piloto).",
-                "Participación en la elaboración de una publicación científica presentada en una conferencia internacional, basada en los resultados del desarrollo.",
+                "Participación en la elaboración de una publicación científica presentada en una conferencia internacional de didáctica en Barcelona a partir de los resultados del piloto.",
                 "Colaboración en tareas de investigación, definición de requerimientos, arquitectura y documentación bajo la supervisión del Dr. Alejandro Zunino y la Dra. Daniela Godoy."
             ],
             technologies: ["Astro.js", "TypeScript", "Python", "Docker", "SQLite", "Redis", "Bun.sh", "Preact", "Sentence Transformers"]
@@ -82,7 +82,7 @@ export const jobsT = {
                 "Implementation of Applied AI and data processing solutions (semantic analysis, search, and ranking), validating approaches through Proofs of Concept (PoCs).",
                 "Collaboration with management and stakeholders to translate functional requirements into technical solutions."
             ],
-            technologies: ["Python", "Apache Solr", "Docker", "Docker Compose", "MySQL", "PostgreSQL", "Bash", "Git", "Gitlab", "Astro", "JavaScript"]
+            technologies: ["Python", "Apache Solr", "Docker", "Docker Compose", "MySQL", "PostgreSQL", "Bash", "Git", "Gitlab", "Astro", "Node.js", "Flask"]
         },
         {
             title: "Fullstack Developer",
