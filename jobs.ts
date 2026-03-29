@@ -1,17 +1,18 @@
 export const jobsT = {
     "es": [
         {
-            title: "Python Backend Developer (AWS/Serverless)",
+            title: "Software Engineer (Python & AWS)",
             company: "Distribuidora Espora",
             location: "Tandil, Buenos Aires",
             isRemote: true,
             duration: "Ene. 2026 - Act.",
             description: [
                 "Desarrollé en Python un pipeline serverless y event-driven en AWS para procesamiento de documentos, automatizando la ingesta y eliminando ~5 horas diarias de carga manual de datos. Aseguré el webhook público con verificación de firma HMAC-SHA256.",
-                "Implementé un flujo asíncrono con SQS, Lambda y DynamoDB, con procesamiento idempotente mediante escrituras condicionales, correlación de estado y recuperación de fallos vía DLQ.",
-                "Integré Amazon Textract (OCR) con lógica de validación determinística y reglas de negocio para garantizar integridad transaccional y extracción estructurada de datos.",
-                "Automaticé la infraestructura con Terraform (Infrastructure as Code), incluyendo gestión de estado remoto, políticas IAM de mínimo privilegio y secretos en SSM Parameter Store.",
-                "Implementé observabilidad con aws-lambda-powertools para logging estructurado en JSON y métricas custom en CloudWatch, habilitando detección proactiva de errores y alertas operativas."
+                "Implementé un flujo asíncrono con SQS, S3, Lambda y DynamoDB, con procesamiento idempotente multicapa (locks), escrituras condicionales, correlación de estado, reintentos vía DLQ, mitigando duplicados por concurrencia/forward y evitando pérdida de datos siguiendo un enfoque no-loss first",
+                "Integré Amazon Textract (OCR) con lógica de extracción y validación determinística, con reglas de negocio para garantizar integridad transaccional y extracción estructurada de datos.",
+                "Construí IaC con Terraform (remote state, IAM least privilege, SSM, parametrización por ambiente, dashboards/alertas).",
+                "Implementé observabilidad end-to-end (Powertools + CloudWatch metrics/alarms/dashboards) con umbrales calibrados al volumen real."
+
             ],
             technologies: ["AWS", "GCP", "Lambda", "SQS", "Textract", "S3", "DynamoDB", "Terraform", "Python"]
         },
@@ -52,17 +53,17 @@ export const jobsT = {
     ],
     "en": [
         {
-            title: "Python Backend Developer (AWS/Serverless)",
+            title: "Software Engineer (Python & AWS)",
             company: "Distribuidora Espora",
             location: "Tandil, Buenos Aires",
             isRemote: true,
             duration: "Jan. 2026 - Present",
             description: [
-                "Built in Python a serverless, event-driven data processing pipeline on AWS, automating document ingestion and eliminating ~5 daily hours of manual data entry. Secured the public webhook endpoint with HMAC-SHA256 signature verification.",
-                "Implemented an asynchronous workflow with SQS, Lambda, and DynamoDB using idempotent processing with conditional writes, state correlation, and DLQ-based failure recovery.",
-                "Integrated Amazon Textract (OCR) with deterministic validation logic and business rules to ensure transactional integrity and structured data extraction.",
-                "Automated the full cloud infrastructure with Terraform (Infrastructure as Code), including remote state management, least-privilege IAM policies, and secrets management via SSM Parameter Store.",
-                "Implemented observability with aws-lambda-powertools for structured JSON logging and CloudWatch custom metrics, enabling proactive error detection and operational alerting."
+                "Developed in Python a serverless, event-driven pipeline on AWS for document processing, automating ingestion and removing ~5 daily hours of manual data entry. Secured the public webhook with HMAC-SHA256 signature verification.",
+                "Implemented an asynchronous flow with SQS, S3, Lambda, and DynamoDB, using multi-layer idempotent processing (locks), conditional writes, state correlation, and DLQ retries, mitigating concurrency/forward duplicates and preventing data loss with a no-loss-first approach.",
+                "Integrated Amazon Textract (OCR) with deterministic extraction and validation logic, plus business rules to ensure transactional integrity and structured data extraction.",
+                "Built IaC with Terraform (remote state, least-privilege IAM, SSM, environment-based parametrization, dashboards/alerts).",
+                "Implemented end-to-end observability (Powertools + CloudWatch metrics/alarms/dashboards) with thresholds calibrated to real production volume."
             ],
             technologies: ["AWS", "GCP", "Lambda", "SQS", "Textract", "S3", "DynamoDB", "Terraform", "Python"]
         },
@@ -94,7 +95,7 @@ export const jobsT = {
                 "Designed, developed, and implemented a fullstack educational web platform to support inquiry-based learning through Study and Research Paths (SRP).",
                 "Implemented Python backend features with SQLite and Redis for collaborative work, academic progress tracking, and data management.",
                 "Developed applied AI algorithms for automated educational data analysis, including semantic processing with Sentence Transformers.",
-                "Deployed and validated the platform in real-world classroom pilots; the results led to a scientific paper presented at an international didactics conference.",
+                "Deployed and validated the platform in real-world classroom pilots; the results led to a scientific paper presented at an international didactics conference in Barcelona.",
                 "Collaborated on research, requirements definition, architectural design, and documentation under the supervision of Dr. Alejandro Zunino and Dr. Daniela Godoy."
             ],
             technologies: ["Astro.js", "TypeScript", "Python", "Docker", "SQLite", "Redis", "Bun.sh", "Preact", "Sentence Transformers"]
