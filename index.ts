@@ -83,17 +83,17 @@ function harvardCvHtml(data: CVData, lang: Lang, profileImageBase64: string): st
     body { font-family: 'Georgia', serif; margin: 40px; color: #000; line-height: 1.45; }
     
     .header {
-        display: flex;
-        gap: 30px;
         margin-bottom: 25px;
         border-bottom: 2px solid #000;
         padding-bottom: 20px;
+        overflow: hidden; /* Clear floats */
     }
     .header-info {
-        flex: 1;
+        float: left;
+        width: 75%;
     }
     .header-photo {
-        flex-shrink: 0;
+        float: right;
     }
     .header-photo img {
         display: none; /* Hide original img tag if present */
@@ -129,44 +129,30 @@ function harvardCvHtml(data: CVData, lang: Lang, profileImageBase64: string): st
     
     .entry { margin-bottom: 16px; }
     
-    .entry-head { 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: flex-start; /* Changed from baseline to handle wrapping better */
-    }
-    
     /* Semantic Job Title */
-    h3 {
-        font-size: 1em;
+    .job-title {
+        font-size: 1.05em;
         font-weight: bold;
         margin: 0;
         color: #000;
-        /* Allow title to wrap if needed, taking available space */
-        flex: 1; 
-        padding-right: 15px; /* Add some space between title and date */
+    }
+    
+    .company-name {
+        font-size: 1em;
+        font-weight: bold;
+        color: #333;
+        margin-top: 2px;
     }
     
     .entry-date { 
         font-weight: bold; 
         font-size: 1em; 
-        white-space: nowrap; /* Prevent date from wrapping */
-        flex-shrink: 0; /* Ensure date doesn't shrink */
-        text-align: right;
-    } /* Visual match for the date/duration */
+        margin-top: 2px;
+    }
 
     .entry-sub { font-style: italic; color: #333; font-size: 0.95em; margin-bottom: 4px; margin-top: 2px;}
     .entry-desc { font-size: 0.95em; text-align: justify; }
     
-    ul.tags { margin: 5px 0 0 0; padding: 0; list-style: none; }
-    ul.tags li { 
-        display: inline-block; 
-        font-size: 0.8em; 
-        border: 1px solid #333; 
-        padding: 1px 5px; 
-        border-radius: 3px; 
-        margin-right: 4px; 
-        margin-bottom: 2px;
-    }
 
     .skills-row { margin-bottom: 6px; font-size: 0.95em; }
     .skills-label { font-weight: bold; text-decoration: underline; margin-right: 6px; }
@@ -195,19 +181,19 @@ function harvardCvHtml(data: CVData, lang: Lang, profileImageBase64: string): st
   </div>
 
   <div class="section">
-    <h2>${lang === "es" ? "Perfil" : "Profile"}</h2>
+    <h2>${lang === "es" ? "Resumen Profesional" : "Professional Summary"}</h2>
     <div class="entry-desc">${data.summary}</div>
   </div>
 
   <div class="section">
-    <h2>${lang === "es" ? "Habilidades" : "Skills"}</h2>
-    <div class="skills-row">
-        <span class="skills-label">DevOps:</span>
-        ${data.devops.join(", ")}
-    </div>
+    <h2>${lang === "es" ? "Habilidades Técnicas" : "Technical Skills"}</h2>
     <div class="skills-row">
         <span class="skills-label">${lang === "es" ? "Backend" : "Backend"}:</span>
         ${data.backend.join(", ")}
+    </div>
+    <div class="skills-row">
+        <span class="skills-label">${lang === "es" ? "Cloud" : "Cloud"}:</span>
+        ${data.devops.join(", ")}
     </div>
     <div class="skills-row">
         <span class="skills-label">${lang === "es" ? "Frontend" : "Frontend"}:</span>
@@ -223,15 +209,14 @@ function harvardCvHtml(data: CVData, lang: Lang, profileImageBase64: string): st
     <h2>${lang === "es" ? "Experiencia" : "Experience"}</h2>
     ${data.experience.map(e => `
       <div class="entry">
-        <div class="entry-head">
-            <h3>${e.title}, ${e.company}</h3>
-            <span class="entry-date">${e.duration}</span>
-        </div>
+        <h3 class="job-title">${e.title}</h3>
+        <div class="company-name">${e.company}</div>
+        <div class="entry-date">${e.duration}</div>
         <div class="entry-sub">${e.location} ${e.isRemote ? "(Remote)" : ""}</div>
-        <div class="entry-desc">
-            ${Array.isArray(e.description) ? e.description.join(" ") : e.description}
-        </div>
-        ${e.technologies && e.technologies.length > 0 ? `<ul class="tags">${e.technologies.map(t => `<li>${t}</li>`).join("")}</ul>` : ""}
+        <ul style="margin: 4px 0 0 0; padding-left: 20px;">
+            ${(Array.isArray(e.description) ? e.description : [e.description]).map(d => `<li>${d}</li>`).join("\n            ")}
+        </ul>
+        ${e.technologies && e.technologies.length > 0 ? `<div style="font-size: 0.85em; margin-top: 4px;"><strong>${lang === "es" ? "Tecnologías" : "Technologies"}:</strong> ${e.technologies.join(", ")}</div>` : ""}
       </div>
     `).join("")}
   </div>
@@ -240,15 +225,12 @@ function harvardCvHtml(data: CVData, lang: Lang, profileImageBase64: string): st
     <h2>${lang === "es" ? "Educación" : "Education"}</h2>
     ${data.education.map(ed => `
       <div class="entry">
-        <div class="entry-head">
-            <h3>${ed.title}, ${ed.company}</h3>
-            <span class="entry-date">${ed.duration}</span>
-        </div>
-        <div class="entry-desc">
-            ${Array.isArray(ed.description)
-      ? `<ul style="margin: 0; padding-left: 20px;">${ed.description.map(d => `<li>${d}</li>`).join("")}</ul>`
-      : ed.description}
-        </div>
+        <h3 class="job-title">${ed.title}</h3>
+        <div class="company-name">${ed.company}</div>
+        <div class="entry-date">${ed.duration}</div>
+        <ul style="margin: 4px 0 0 0; padding-left: 20px;">
+            ${(Array.isArray(ed.description) ? ed.description : [ed.description]).map(d => `<li>${d}</li>`).join("\n            ")}
+        </ul>
       </div>
     `).join("")}
   </div>
@@ -281,8 +263,8 @@ async function generatePdfForLang(lang: Lang) {
   fs.writeFileSync(htmlPath, html, "utf8");
 
   const browser = await puppeteer.launch({
-    executablePath: '/usr/bin/google-chrome-stable',
-    // executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    // executablePath: '/usr/bin/google-chrome-stable',
+    executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
   const page = await browser.newPage();

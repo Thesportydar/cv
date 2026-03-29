@@ -8,7 +8,7 @@ export const personalInfoT = {
         github: "https://github.com/thesportydar",
         ciudad: "Tandil, Buenos Aires, Argentina",
         edad: 23,
-        profile: "Ingeniero de Sistemas especializado en backend y arquitecturas cloud-native. Experiencia en el diseño y despliegue de sistemas orientados a eventos en AWS utilizando Infraestructura como Código (IaC) y patrones serverless. Fuerte enfoque en la confiabilidad, la observabilidad y la eficiencia de costos en sistemas distribuidos. Busco crecer en entornos de ingeniería de alto rendimiento donde la profundidad técnica y el ownership sean valores clave."
+        profile: "Ingeniero de Sistemas especializado en desarrollo backend con Python y soluciones cloud en AWS. Experiencia diseñando y desarrollando sistemas distribuidos, pipelines de datos y arquitecturas serverless con foco en confiabilidad, observabilidad y objetivos de negocio. Busco crecer en entornos de ingeniería de alto rendimiento donde la profundidad técnica y el ownership sean valores clave."
     },
     en: {
         name: "Iñaqui Paladino Bravo",
@@ -19,6 +19,6 @@ export const personalInfoT = {
         github: "https://github.com/thesportydar",
         ciudad: "Tandil, Buenos Aires, Argentina",
         edad: 23,
-        profile: "Systems Engineer specialized in backend and cloud-native architectures. Experienced in designing and deploying event-driven systems on AWS using Infrastructure as Code and serverless patterns. Strong focus on reliability, observability, and cost-efficient distributed systems. Seeking to grow in high-performance engineering environments where technical depth and ownership matter."
+        profile: "Systems Engineer specialized in Python backend development and cloud solutions on AWS. Experienced in designing and building distributed systems, data pipelines, and serverless architectures with a strong focus on reliability, observability, and business outcomes. Seeking to grow in high-performance engineering environments where technical depth and ownership matter."
     }
 };

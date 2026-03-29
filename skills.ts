@@ -1,13 +1,13 @@
 export const skillsT = {
     es: {
+        backend: [
+            "Python", "PostgreSQL", "MySQL", "Apache Solr", "DynamoDB", "Redis", "Node.js / Bun", "Java"
+        ],
         devops: [
             "AWS (Lambda, ECS, S3, SQS, DynamoDB, VPC, IAM, CloudWatch, Route53, CloudFront, EventBridge)",
             "Terraform (IaC)", "Docker & Compose",
             "CI/CD (GitHub Actions/GitLab)", "Linux Administration", "Networking (VPC, Subnets, NACLs, NAT/IGW)",
             "Bash Scripting", "N8N"
-        ],
-        backend: [
-            "Python", "PostgreSQL", "MySQL", "Apache Solr", "DynamoDB", "Redis", "Node.js / Bun", "Java"
         ],
         frontend: [
             "TypeScript", "Astro", "JavaScript"
@@ -18,14 +18,14 @@ export const skillsT = {
         cta: "Para ver proyectos de infraestructura y código, visitá mi portfolio:"
     },
     en: {
+        backend: [
+            "Python", "PostgreSQL", "MySQL", "Apache Solr", "DynamoDB", "Redis", "Node.js / Bun", "Java"
+        ],
         devops: [
             "AWS (Lambda, ECS, S3, SQS, DynamoDB, VPC, IAM, CloudWatch, Route53, CloudFront, EventBridge)",
             "Terraform (IaC)", "Docker & Compose",
             "CI/CD (GitHub Actions/GitLab)", "Linux Administration", "Networking (VPC, Subnets, NACLs, NAT/IGW)",
             "Bash Scripting", "N8N"
-        ],
-        backend: [
-            "Python", "PostgreSQL", "MySQL", "Apache Solr", "DynamoDB", "Redis", "Node.js / Bun", "Java"
         ],
         frontend: [
             "TypeScript", "Astro", "JavaScript"
