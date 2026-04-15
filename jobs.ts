@@ -7,11 +7,12 @@ export const jobsT = {
             isRemote: true,
             duration: "Ene. 2026 - Feb. 2026",
             description: [
-                "Desarrollé en Python un <b>pipeline serverless y event-driven en AWS</b> para procesamiento de documentos, automatizando la ingesta y <b>eliminando ~5 horas diarias</b> de carga manual de datos. Aseguré el webhook público con verificación de firma <b>HMAC-SHA256</b>.",
-                "Implementé un flujo asíncrono con <b>SQS, S3, Lambda y DynamoDB</b>, con procesamiento idempotente multicapa (locks), escrituras condicionales, correlación de estado, reintentos vía DLQ, mitigando duplicados por concurrencia/forward y evitando pérdida de datos siguiendo un enfoque <b>no-loss first</b>.",
-                "Integré <b>Amazon Textract (OCR)</b> con lógica de extracción y validación determinística, con reglas de negocio para garantizar integridad transaccional y extracción estructurada de datos.",
-                "Construí IaC con <b>Terraform</b> (remote state, IAM least privilege, SSM, parametrización por ambiente, dashboards/alertas).",
-                "Implementé observabilidad end-to-end (<b>Powertools + CloudWatch metrics/alarms/dashboards</b>) con umbrales calibrados al volumen real."
+                "Diseñé e implementé un pipeline serverless y event-driven en AWS para procesamiento de documentos, eliminando ~5 horas diarias de carga manual y asegurando integridad end-to-end en un entorno productivo.",
+                "Implementé un flujo asíncrono con SQS, S3, Lambda y DynamoDB con procesamiento idempotente multicapa (locks), escrituras condicionales, correlación de estado y reintentos vía DLQ, evitando duplicados y pérdida de datos bajo concurrencia.",
+                "Adopté un enfoque no-loss-first con trade-offs explícitos entre falsos negativos y positivos, reforzado por validaciones determinísticas y reglas de negocio, priorizando integridad contable en un sistema crítico.",
+                "Integré Amazon Textract (OCR) con lógica de extracción y validación determinística, con reglas de negocio para garantizar integridad transaccional y extracción estructurada de datos.",
+                "Aseguré endpoints públicos con verificación de firma HMAC-SHA256 y gestioné toda la infraestructura como código con Terraform (remote state, IAM least privilege, SSM, parametrización por entorno).",
+                "Implementé observabilidad end-to-end con AWS Powertools + CloudWatch (métricas, alarmas y dashboards calibrados al volumen real)."
             ],
             technologies: ["AWS", "GCP", "Lambda", "SQS", "Textract", "S3", "DynamoDB", "Terraform", "Python"]
         },
@@ -22,32 +23,31 @@ export const jobsT = {
             isRemote: false,
             duration: "Abr. 2025 - Act.",
             description: [
-                "Implementación del <b>motor de análisis semántico basado en Inteligencia Artificial (IA)</b> para la <b>segunda base de datos pública más grande del país</b> (CONICET/SIGEVA), permitiendo el procesamiento y la estructuración transversal de décadas de producción científica nacional.",
-                "Diseño de un <b>pipeline de Machine Learning (NLP)</b> de dos etapas (<b>Bi-Encoders y Cross-Encoders</b>) para la resolución de problemas de asignación semántica y matching complejo, optimizando la precisión técnica en el cruce de miles de perfiles.",
-                "Optimización de <b>inferencia masiva de modelos de ML</b> mediante <b>procesamiento paralelo Multi-GPU</b> utilizando torch.multiprocessing, logrando reducir tiempos de cómputo de minutos a segundos en volúmenes críticos de embeddings.",
-                "Desarrollo de algoritmos para resolver problemas complejos de matching, asignación, conformación de comisiones y búsqueda de perfiles de alta precisión.",
-                "Orquestación de <b>pipelines de datos (ETL) concurrentes</b> e híbridos (Python/Solr/PostgreSQL) con detección de idioma y sistemas de caché optimizado mediante compresión GZIP.",
-                "Arquitectura del puente tecnológico para vincular el capital humano científico con demandas de innovación de industrias líderes (<b>Vaca Muerta, Globant, Mercado Libre, Meta</b>) mediante la identificación precisa de capacidades técnicas.",
-                "Gestión de <b>infraestructura y escalabilidad (MLOps)</b> mediante <b>Docker, pipelines de CI/CD</b> y la integración de motores de búsqueda avanzados con bases de datos relacionales (PostgreSQL/MySQL)."
+                "Desarrollo del motor de análisis semántico basado en Inteligencia Artificial (IA) para la segunda base de datos pública más grande del país (CONICET/SIGEVA), procesando y estructurando décadas de producción científica nacional.",
+                "Diseño de un pipeline NLP de dos etapas (bi-encoders + cross-encoders) para matching y asignación semántica de miles de perfiles.",
+                "Implementé un sistema de reranking con cross-encoders, acelerando la inferencia en GPU (~9x speedup) al reemplazar APIs de alto nivel por forward manual y usar precisión mixta (FP16 + autocast), aprovechando Tensor Cores y paralelismo multi-GPU para escalar.",
+                "Desarrollo de algoritmos de IA aplicada para matching complejo, búsqueda de expertos y conformación de comisiones técnicas.",
+                "Orquestación de ETL híbridos y concurrentes (Python, Solr, PostgreSQL/pgvector) con detección de idioma en tiempo real y estrategias de caché.",
+                "Arquitectura del puente tecnológico para vincular expertos con demandas de innovación de industrias líderes (Vaca Muerta, Globant, Mercado Libre, Meta) mediante la identificación precisa de capacidades técnicas.",
+                "Gestión de infraestructura y escalabilidad (MLOps) mediante Docker, pipelines de CI/CD y la integración de motores de búsqueda con bases de datos relacionales."
             ],
-            technologies: ["Python", "Apache Solr", "Docker", "Docker Compose", "MySQL", "PostgreSQL", "Bash", "Git", "Gitlab", "Astro", "Node.js", "Flask"]
+            technologies: ["Python", "Apache Solr", "PostgreSQL", "pgvector", "PyTorch", "Docker", "Bash", "Gitlab", "Astro", "Node.js"]
         },
         {
-            title: "Fullstack Developer",
+            title: "Software Developer",
             company: "ISISTAN",
             location: "Tandil, Buenos Aires",
             isRemote: true,
-            duration: "Ago. 2024 - Feb. 2025",
+            duration: "Ago. 2024 - Mar. 2025",
             description: [
-                "<b>Práctica Profesional Supervisada</b> de desarrollo de software en el marco de un proyecto de investigación del ISISTAN.",
-                "Diseño, desarrollo e implementación de una <b>plataforma web educativa fullstack</b> orientada a facilitar la enseñanza mediante Recorridos de Estudio e Investigación (REIs).",
-                "Implementación de funcionalidades backend en <b>Python con SQLite y Redis</b> para trabajo colaborativo, seguimiento del progreso académico y gestión de datos.",
-                "Desarrollo de algoritmos de <b>IA aplicada</b> para análisis automático de datos educativos, incluyendo procesamiento semántico con <b>Sentence Transformers</b>.",
-                "Despliegue y validación de la plataforma con docentes y estudiantes en contextos reales de aula (<b>experiencia piloto</b>).",
-                "Participación en la elaboración de una <b>publicación científica</b> presentada en una <b>conferencia internacional de didáctica en Barcelona</b> a partir de los resultados del piloto.",
-                "Colaboración en tareas de investigación, definición de requerimientos, arquitectura y documentación bajo la supervisión del Dr. Alejandro Zunino y la Dra. Daniela Godoy."
+                "Diseñé, desarrollé e implementé una plataforma web educativa fullstack para soportar Recorridos de Estudio e Investigación (REIs), un enfoque didáctico orientado a preguntas generadoras que promueve el aprendizaje colaborativo y significativo en matemática.",
+                "Construí el núcleo de la aplicación (Astro SSR con Bun) junto con un worker asíncrono en Python para procesar automáticamente preguntas y respuestas de estudiantes, generando reportes de progreso e identificación de patrones.",
+                "Implementé autenticación con roles diferenciados (docentes y alumnos), almacenamiento de archivos y funcionalidades de colaboración y seguimiento.",
+                "Desarrollé análisis automático de datos educativos mediante embeddings y técnicas de NLP para agrupar respuestas y evaluar avances.",
+                "Desplegué la plataforma en un piloto real con docentes y estudiantes, validando su adopción en contexto de aula.",
+                "Coautoricé una publicación científica con los resultados del piloto, presentada en una conferencia internacional de didáctica en Barcelona."
             ],
-            technologies: ["Astro.js", "TypeScript", "Python", "Docker", "SQLite", "Redis", "Bun.sh", "Preact", "Sentence Transformers"]
+            technologies: ["Astro.js", "TypeScript", "Tailwind CSS", "HTMX", "Python", "SQLite", "Redis", "Bun.sh", "Preact", "Scikit-Learn"]
         }
     ],
     "en": [
@@ -58,11 +58,12 @@ export const jobsT = {
             isRemote: true,
             duration: "Jan. 2026 - Feb. 2026",
             description: [
-                "Developed in Python a <b>serverless, event-driven pipeline on AWS</b> for document processing, automating ingestion and <b>removing ~5 daily hours</b> of manual data entry. Secured the public webhook with <b>HMAC-SHA256</b> signature verification.",
-                "Implemented an asynchronous flow with <b>SQS, S3, Lambda, and DynamoDB</b>, using multi-layer idempotent processing (locks), conditional writes, state correlation, and DLQ retries, mitigating concurrency/forward duplicates and preventing data loss with a <b>no-loss-first</b> approach.",
-                "Integrated <b>Amazon Textract (OCR)</b> with deterministic extraction and validation logic, plus business rules to ensure transactional integrity and structured data extraction.",
-                "Built IaC with <b>Terraform</b> (remote state, least-privilege IAM, SSM, environment-based parametrization, dashboards/alerts).",
-                "Implemented end-to-end observability (<b>Powertools + CloudWatch metrics/alarms/dashboards</b>) with thresholds calibrated to real production volume."
+                "Designed and implemented a serverless, event-driven pipeline on AWS for document processing, eliminating ~5 daily hours of manual data entry and ensuring end-to-end integrity in a production environment.",
+                "Implemented an asynchronous flow with SQS, S3, Lambda, and DynamoDB using multi-layer idempotent processing (locks), conditional writes, state correlation, and DLQ retries, avoiding duplicates and data loss under concurrency.",
+                "Adopted a no-loss-first approach with explicit trade-offs between false negatives and positives, reinforced by deterministic validations and business rules, prioritizing accounting integrity in a critical system.",
+                "Integrated Amazon Textract (OCR) with deterministic extraction and validation logic, plus business rules to ensure transactional integrity and structured data extraction.",
+                "Secured public endpoints with HMAC-SHA256 signature verification and managed all infrastructure as code with Terraform (remote state, least-privilege IAM, SSM, environment-based parametrization).",
+                "Implemented end-to-end observability with AWS Powertools + CloudWatch (metrics, alarms, and dashboards calibrated to real production volume)."
             ],
             technologies: ["AWS", "GCP", "Lambda", "SQS", "Textract", "S3", "DynamoDB", "Terraform", "Python"]
         },
@@ -73,31 +74,31 @@ export const jobsT = {
             isRemote: false,
             duration: "Apr. 2025 - Present",
             description: [
-                "Implemented an <b>AI-driven semantic analysis engine</b> for the <b>country’s second-largest public database</b> (CONICET/SIGEVA), enabling the cross-sectional processing and structuring of decades of national scientific production.",
-                "Designed a <b>two-stage Machine Learning (NLP) pipeline</b> (<b>Bi-Encoders and Cross-Encoders</b>) to solve complex semantic assignment and matching problems, optimizing technical precision across thousands of profiles.",
-                "Optimized <b>massive ML model inference</b> through <b>Multi-GPU parallel processing</b> using torch.multiprocessing, reducing computation times from minutes to seconds for critical embedding volumes.",
-                "Developed <b>applied AI algorithms</b> to solve complex matching, assignment, committee formation, and high-precision profile search problems.",
-                "Orchestrated <b>concurrent and hybrid data pipelines (ETL)</b> using Python, Solr, and PostgreSQL, featuring real-time language detection and <b>optimized caching systems</b>.",
-                "Architected an <b>AI-driven technological bridge</b> to link scientific human capital with innovation demands from leading industries (<b>Vaca Muerta, Globant, Mercado Libre, Meta</b>) through precise technical capability identification.",
-                "Managed <b>infrastructure and scalability (MLOps)</b> using <b>Docker, CI/CD pipelines</b>, and the integration of advanced search engines with relational databases (PostgreSQL/MySQL)."
+                "Developed an AI-driven semantic analysis engine for the country's second largest public database (CONICET/SIGEVA), processing and structuring decades of national scientific production.",
+                "Designed a two-stage NLP pipeline (bi-encoders + cross-encoders) for semantic matching and assignment across thousands of profiles.",
+                "Implemented a cross-encoder reranking system, accelerating GPU inference (~9x speedup) by replacing high-level APIs with manual forward passes and utilizing mixed precision (FP16 + autocast), leveraging Tensor Cores and multi-GPU parallelism for scale.",
+                "Developed applied AI algorithms for complex matching, expert search, and the formation of technical committees.",
+                "Orchestrated concurrent and hybrid ETL pipelines (Python, Solr, PostgreSQL/pgvector) featuring real-time language detection and caching strategies.",
+                "Architected a technological bridge to connect experts with innovation demands from leading industries (Vaca Muerta, Globant, Mercado Libre, Meta) through precise technical capability identification.",
+                "Managed infrastructure and scalability (MLOps) via Docker, CI/CD pipelines, and the integration of search engines with relational databases."
             ],
-            technologies: ["Python", "Apache Solr", "Docker", "Docker Compose", "MySQL", "PostgreSQL", "Bash", "Git", "Gitlab", "Astro", "Node.js", "Flask"]
+            technologies: ["Python", "Apache Solr", "PostgreSQL", "pgvector", "PyTorch", "Docker", "Bash", "Gitlab", "Astro", "Node.js"]
         },
         {
-            title: "Fullstack Developer",
+            title: "Software Developer",
             company: "ISISTAN",
             location: "Tandil, Buenos Aires",
             isRemote: true,
-            duration: "Aug. 2024 - Feb. 2025",
+            duration: "Aug. 2024 - Mar. 2025",
             description: [
-                "<b>Supervised Professional Internship</b> within an ISISTAN research project.",
-                "Designed, developed, and implemented a <b>fullstack educational web platform</b> to support inquiry-based learning through Study and Research Paths (SRP).",
-                "Implemented Python backend features with <b>SQLite and Redis</b> for collaborative work, academic progress tracking, and data management.",
-                "Developed <b>applied AI algorithms</b> for automated educational data analysis, including semantic processing with <b>Sentence Transformers</b>.",
-                "Deployed and validated the platform in real-world classroom pilots; the results led to a <b>scientific paper</b> presented at an <b>international didactics conference in Barcelona</b>.",
-                "Collaborated on research, requirements definition, architectural design, and documentation under the supervision of Dr. Alejandro Zunino and Dr. Daniela Godoy."
+                "Designed, developed, and implemented a fullstack educational web platform to support Study and Research Paths (SRP), an inquiry-based didactic approach that promotes collaborative and meaningful learning in mathematics.",
+                "Built the core application (Astro SSR with Bun) alongside an asynchronous Python worker to automatically process student questions and answers, generating progress reports and identifying patterns.",
+                "Implemented role-based authentication (teachers and students), file storage, and real-time collaboration and tracking capabilities.",
+                "Developed automated educational data analysis utilizing embeddings and NLP techniques to cluster responses and evaluate progress.",
+                "Deployed the platform in a real-world classroom pilot with teachers and students, validating its adoption in context.",
+                "Co-authored a scientific paper presenting the pilot results at an international didactics conference in Barcelona."
             ],
-            technologies: ["Astro.js", "TypeScript", "Python", "Docker", "SQLite", "Redis", "Bun.sh", "Preact", "Sentence Transformers"]
+            technologies: ["Astro.js", "TypeScript", "Tailwind CSS", "HTMX", "Python", "SQLite", "Redis", "Bun.sh", "Preact", "Scikit-Learn"]
         }
     ]
 }
