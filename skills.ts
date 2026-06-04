@@ -3,8 +3,12 @@ export const skillsT = {
         backend: [
             "Python", "PostgreSQL", "MySQL", "Apache Solr", "MongoDB", "Redis", "Node.js / Bun", "Java"
         ],
+        ai: [
+            "PyTorch (FP16 / autocast)", "Sentence Transformers", "Transformers", "pgvector",
+            "bi-encoder + cross-encoder reranking", "Pytorch", "Embeddings"
+        ],
         devops: [
-            "AWS (Lambda, ECS, S3, SQS, DynamoDB, VPC, IAM, CloudWatch, Route53, CloudFront, EventBridge)",
+            "AWS (Lambda, ECS, S3, SQS, DynamoDB, VPC, IAM, CloudWatch, Route53, CloudFront, EventBridge, Bedrock)",
             "Terraform (IaC)", "Docker & Compose",
             "CI/CD (GitHub Actions/GitLab)", "Linux Administration", "Networking (VPC, Subnets, NACLs, NAT/IGW)",
             "Bash Scripting", "N8N"
@@ -15,14 +19,18 @@ export const skillsT = {
         soft: [
             "Resolución de problemas", "Autodidacta", "Comunicación técnica", "Adaptabilidad", "Metodologías ágiles (Scrum)"
         ],
-        cta: "Para ver proyectos de infraestructura y código, visitá mi portfolio:"
+        cta: "Para ver proyectos visitá mi portfolio:"
     },
     en: {
         backend: [
             "Python", "PostgreSQL", "MySQL", "Apache Solr", "DynamoDB", "Redis", "Node.js / Bun", "Java"
         ],
+        ai: [
+            "PyTorch (FP16 / autocast)", "Sentence Transformers", "Transformers", "pgvector",
+            "bi-encoder + cross-encoder reranking", "Pytorch", "Embeddings"
+        ],
         devops: [
-            "AWS (Lambda, ECS, S3, SQS, DynamoDB, VPC, IAM, CloudWatch, Route53, CloudFront, EventBridge)",
+            "AWS (Lambda, ECS, S3, SQS, DynamoDB, VPC, IAM, CloudWatch, Route53, CloudFront, EventBridge, Bedrock)",
             "Terraform (IaC)", "Docker & Compose",
             "CI/CD (GitHub Actions/GitLab)", "Linux Administration", "Networking (VPC, Subnets, NACLs, NAT/IGW)",
             "Bash Scripting", "N8N"
@@ -33,6 +41,6 @@ export const skillsT = {
         soft: [
             "Problem solving", "Self-taught", "Technical communication", "Adaptability", "Agile methodologies (Scrum)"
         ],
-        cta: "For infrastructure projects and source code, visit my online portfolio:"
+        cta: "For projects and source code, visit my online portfolio:"
     }
 };

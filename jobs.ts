@@ -14,24 +14,22 @@ export const jobsT = {
                 "Aseguré endpoints públicos con verificación de firma HMAC-SHA256 y gestioné toda la infraestructura como código con Terraform (remote state, IAM least privilege, SSM, parametrización por entorno).",
                 "Implementé observabilidad end-to-end con AWS Powertools + CloudWatch (métricas, alarmas y dashboards calibrados al volumen real)."
             ],
-            technologies: ["AWS", "GCP", "Lambda", "SQS", "Textract", "S3", "DynamoDB", "Terraform", "Python"]
+            technologies: ["AWS", "Lambda", "SQS", "Textract", "S3", "DynamoDB", "Terraform", "Python"]
         },
         {
-            title: "Backend & Data Engineer",
+            title: "AI & Backend Engineer",
             company: "ISISTAN",
             location: "Tandil, Buenos Aires",
             isRemote: false,
             duration: "Abr. 2025 - Act.",
             description: [
-                "Desarrollo del motor de análisis semántico basado en Inteligencia Artificial (IA) para la segunda base de datos pública más grande del país (CONICET/SIGEVA), procesando y estructurando décadas de producción científica nacional.",
-                "Diseño de un pipeline NLP de dos etapas (bi-encoders + cross-encoders) para matching y asignación semántica de miles de perfiles.",
-                "Implementé un sistema de reranking con cross-encoders, acelerando la inferencia en GPU (~9x speedup) al reemplazar APIs de alto nivel por forward manual y usar precisión mixta (FP16 + autocast), aprovechando Tensor Cores y paralelismo multi-GPU para escalar.",
-                "Desarrollo de algoritmos de IA aplicada para matching complejo, búsqueda de expertos y conformación de comisiones técnicas.",
-                "Orquestación de ETL híbridos y concurrentes (Python, Solr, PostgreSQL/pgvector) con detección de idioma en tiempo real y estrategias de caché.",
-                "Arquitectura del puente tecnológico para vincular expertos con demandas de innovación de industrias líderes (Vaca Muerta, Globant, Mercado Libre, Meta) mediante la identificación precisa de capacidades técnicas.",
-                "Gestión de infraestructura y escalabilidad (MLOps) mediante Docker, pipelines de CI/CD y la integración de motores de búsqueda con bases de datos relacionales."
+                "Desarollo del motor de análisis semántico de CONICET/SIGEVA: indexa +27k personas y millones de producciones científicas para búsqueda semántica, profiling automático y asignación de postulantes e ingresantes mediante NLP multi-idioma.",
+                "Implementé un pipeline de matching de dos etapas (bi-encoder + cross-encoder) para asignar revisores a perfiles de investigación respetando restricciones institucionales y maximizando afinidad semántica.",
+                "Optimicé el reranker cross-encoder reemplazando APIs de alto nivel por forward passes manuales con precisión mixta (FP16 + autocast), logrando ~9x de speedup al aprovechar Tensor Cores y habilitando el procesamiento paralelo multi-GPU.",
+                "Desarrollo de una PoC de buscador de investigadores para demandas industriales (Globant, Mercado Libre, Vaca Muerta): identifica en segundos a los expertos más relevantes para un problema técnico dado.",
+                "Orquestación de ETL híbridos y concurrentes con detección de idioma en tiempo real, estrategias de caché, y gestión de infraestructura (MLOps) mediante Docker y CI/CD."
             ],
-            technologies: ["Python", "Apache Solr", "PostgreSQL", "pgvector", "PyTorch", "Docker", "Bash", "Gitlab", "Astro", "Node.js"]
+            technologies: ["Python", "PyTorch", "Apache Solr", "PostgreSQL", "pgvector", "Docker", "Bash", "Gitlab", "Astro", "Node.js"]
         },
         {
             title: "Software Developer",
@@ -65,24 +63,22 @@ export const jobsT = {
                 "Secured public endpoints with HMAC-SHA256 signature verification and managed all infrastructure as code with Terraform (remote state, least-privilege IAM, SSM, environment-based parametrization).",
                 "Implemented end-to-end observability with AWS Powertools + CloudWatch (metrics, alarms, and dashboards calibrated to real production volume)."
             ],
-            technologies: ["AWS", "GCP", "Lambda", "SQS", "Textract", "S3", "DynamoDB", "Terraform", "Python"]
+            technologies: ["AWS", "Lambda", "SQS", "Textract", "S3", "DynamoDB", "Terraform", "Python"]
         },
         {
-            title: "Data & Backend Engineer",
+            title: "AI & Backend Engineer",
             company: "ISISTAN",
             location: "Tandil, Buenos Aires",
             isRemote: false,
             duration: "Apr. 2025 - Present",
             description: [
-                "Developed an AI-driven semantic analysis engine for the country's second largest public database (CONICET/SIGEVA), processing and structuring decades of national scientific production.",
-                "Designed a two-stage NLP pipeline (bi-encoders + cross-encoders) for semantic matching and assignment across thousands of profiles.",
-                "Implemented a cross-encoder reranking system, accelerating GPU inference (~9x speedup) by replacing high-level APIs with manual forward passes and utilizing mixed precision (FP16 + autocast), leveraging Tensor Cores and multi-GPU parallelism for scale.",
-                "Developed applied AI algorithms for complex matching, expert search, and the formation of technical committees.",
-                "Orchestrated concurrent and hybrid ETL pipelines (Python, Solr, PostgreSQL/pgvector) featuring real-time language detection and caching strategies.",
-                "Architected a technological bridge to connect experts with innovation demands from leading industries (Vaca Muerta, Globant, Mercado Libre, Meta) through precise technical capability identification.",
-                "Managed infrastructure and scalability (MLOps) via Docker, CI/CD pipelines, and the integration of search engines with relational databases."
+                "Designed the semantic analysis engine for CONICET/SIGEVA: indexes 27k+ profiles and millions of scientific publications for semantic search, automatic profiling, and reviewer assignment across fellowship and researcher intake processes via multilingual NLP. Featured in press as an AI innovation in public sector management.",
+                "Implemented a two-stage matching pipeline (bi-encoder + cross-encoder) to assign reviewers to research profiles while enforcing institutional constraints (conflicts of interest, quotas) and maximizing semantic affinity.",
+                "Optimized the cross-encoder reranker by replacing high-level APIs with manual forward passes and mixed precision (FP16 + autocast), achieving ~9x GPU speedup by leveraging Tensor Cores and enabling multi-GPU parallel processing.",
+                "Built a PoC expert search engine for industrial demands (Globant, Mercado Libre, Vaca Muerta): identifies the most relevant researchers for a given technical problem in seconds.",
+                "Orchestrated concurrent hybrid ETL pipelines with real-time language detection, caching strategies, and infrastructure management (MLOps) via Docker and CI/CD."
             ],
-            technologies: ["Python", "Apache Solr", "PostgreSQL", "pgvector", "PyTorch", "Docker", "Bash", "Gitlab", "Astro", "Node.js"]
+            technologies: ["Python", "PyTorch", "Apache Solr", "PostgreSQL", "pgvector", "Docker", "Bash", "Gitlab", "Astro", "Node.js"]
         },
         {
             title: "Software Developer",
