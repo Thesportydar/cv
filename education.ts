@@ -14,8 +14,8 @@ export const educationT = {
             company: "Amazon Web Services (AWS)",
             location: "",
             isRemote: true,
-            duration: "2026",
-            description: ["Preparación completa — examen pendiente"],
+            duration: "Jun. 2026 - Jun. 2029",
+            description: [],
             technologies: []
         },
         {
@@ -43,8 +43,8 @@ export const educationT = {
             company: "Amazon Web Services (AWS)",
             location: "",
             isRemote: true,
-            duration: "2026",
-            description: ["Preparation completed — exam pending"],
+            duration: "Jun. 2026 - Jun. 2029",
+            description: [],
             technologies: []
         },
         {
