@@ -1,7 +1,7 @@
 export const personalInfoT = {
     es: {
         name: "Iñaqui Paladino Bravo",
-        role: "AI & Backend Engineer",
+        role: "AI Engineer",
         email: "ipaladinobravo@gmail.com",
         linkedin: "https://www.linkedin.com/in/ipaladino",
         portfolio: "https://inaquipaladino.com",
@@ -12,7 +12,7 @@ export const personalInfoT = {
     },
     en: {
         name: "Iñaqui Paladino Bravo",
-        role: "AI & Backend Engineer",
+        role: "AI Engineer",
         email: "ipaladinobravo@gmail.com",
         linkedin: "https://www.linkedin.com/in/ipaladino",
         portfolio: "https://inaquipaladino.com",

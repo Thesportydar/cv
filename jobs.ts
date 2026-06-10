@@ -17,7 +17,7 @@ export const jobsT = {
             technologies: ["AWS", "Lambda", "SQS", "Textract", "S3", "DynamoDB", "Terraform", "Python"]
         },
         {
-            title: "AI & Backend Engineer",
+            title: "AI Engineer",
             company: "ISISTAN",
             location: "Tandil, Buenos Aires",
             isRemote: false,
@@ -66,7 +66,7 @@ export const jobsT = {
             technologies: ["AWS", "Lambda", "SQS", "Textract", "S3", "DynamoDB", "Terraform", "Python"]
         },
         {
-            title: "AI & Backend Engineer",
+            title: "AI Engineer",
             company: "ISISTAN",
             location: "Tandil, Buenos Aires",
             isRemote: false,

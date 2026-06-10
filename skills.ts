@@ -4,8 +4,8 @@ export const skillsT = {
             "Python", "PostgreSQL", "MySQL", "Apache Solr", "MongoDB", "Redis", "Node.js / Bun", "Java"
         ],
         ai: [
-            "PyTorch (FP16 / autocast)", "Sentence Transformers", "Transformers", "pgvector",
-            "bi-encoder + cross-encoder reranking", "Pytorch", "Embeddings"
+            "PyTorch (FP16 / autocast)", "Sentence Transformers",
+            "Reranking (bi-encoder + cross-encoder)", "RAG", "LLMs", "Qdrant"
         ],
         devops: [
             "AWS (Lambda, ECS, S3, SQS, DynamoDB, VPC, IAM, CloudWatch, Route53, CloudFront, EventBridge, Bedrock)",
@@ -15,9 +15,6 @@ export const skillsT = {
         ],
         frontend: [
             "TypeScript", "Astro", "JavaScript"
-        ],
-        soft: [
-            "Resolución de problemas", "Autodidacta", "Comunicación técnica", "Adaptabilidad", "Metodologías ágiles (Scrum)"
         ],
         cta: "Para ver proyectos visitá mi portfolio:"
     },
@@ -26,8 +23,8 @@ export const skillsT = {
             "Python", "PostgreSQL", "MySQL", "Apache Solr", "DynamoDB", "Redis", "Node.js / Bun", "Java"
         ],
         ai: [
-            "PyTorch (FP16 / autocast)", "Sentence Transformers", "Transformers", "pgvector",
-            "bi-encoder + cross-encoder reranking", "Pytorch", "Embeddings"
+            "PyTorch (FP16 / autocast)", "Sentence Transformers",
+            "Reranking (bi-encoder + cross-encoder)", "RAG", "LLMs", "Qdrant"
         ],
         devops: [
             "AWS (Lambda, ECS, S3, SQS, DynamoDB, VPC, IAM, CloudWatch, Route53, CloudFront, EventBridge, Bedrock)",
@@ -37,9 +34,6 @@ export const skillsT = {
         ],
         frontend: [
             "TypeScript", "Astro", "JavaScript"
-        ],
-        soft: [
-            "Problem solving", "Self-taught", "Technical communication", "Adaptability", "Agile methodologies (Scrum)"
         ],
         cta: "For projects and source code, visit my online portfolio:"
     }

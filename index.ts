@@ -46,7 +46,6 @@ interface CVData {
   ai: string[];
   frontend: string[];
   devops: string[];
-  soft: string[];
   cta: string;
 }
 
@@ -66,7 +65,6 @@ function extractCVData(lang: Lang): CVData {
     ai: skills.ai,
     frontend: skills.frontend,
     devops: skills.devops,
-    soft: skills.soft,
     cta: skills.cta
   };
 }
@@ -204,10 +202,6 @@ function harvardCvHtml(data: CVData, lang: Lang, profileImageBase64: string): st
     <div class="skills-row">
         <span class="skills-label">${lang === "es" ? "Frontend" : "Frontend"}:</span>
         ${data.frontend.join(", ")}
-    </div>
-    <div class="skills-row">
-        <span class="skills-label">${lang === "es" ? "Blandas" : "Soft Skills"}:</span>
-        ${data.soft.join(", ")}
     </div>
   </div>
 
